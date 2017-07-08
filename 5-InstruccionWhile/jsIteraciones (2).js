@@ -1,6 +1,13 @@
 function Mostrar()
 {
-	alert('iteración while');
+	num=11;
+
+	while(1<num){
+		num--;
+		alert('iteración while: '+num);
+	}
+
+	
 
 
 }//FIN DE LA FUNCIÓN
