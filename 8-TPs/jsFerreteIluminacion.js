@@ -25,6 +25,7 @@ function CalcularPrecio ()
         descuento=subprecio*0.50;
         precioDescuento=subprecio-descuento;
 
+
         document.getElementById('precioDescuento').value=precioDescuento;
     }
 

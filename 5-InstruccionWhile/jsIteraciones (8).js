@@ -2,13 +2,32 @@ function Mostrar()
 {
 
 	var contador=0;
-	var positivo=0;
-	var negativo=1;
-	
+	var acumuladorPositivo=0;
+	var acumuladorNegativo=1;
 	var respuesta='si';
 
+while(confirm('Desea Continuar.....',true)){
+	contador++;
+	num=parseInt(prompt('Ingrese Numero....'));
 
-document.getElementById('suma').value=positivo;
-document.getElementById('producto').value=negativo;
+	while(isNaN(num)){
+			num=prompt('Nuevamente..........');
+			num=parseInt(num);
+		}
+	
+	if(num>=0){
+		acumuladorPositivo+=num;
+	}else{
+		acumuladorNegativo*=num;
+	}
+
+	
+
+
+}
+
+
+document.getElementById('suma').value=acumuladorPositivo;
+document.getElementById('producto').value=acumuladorNegativo;
 
 }//FIN DE LA FUNCIÓN
