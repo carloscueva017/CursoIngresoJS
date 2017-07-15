@@ -14,6 +14,8 @@ var subprecio;
 var descuento;
 var precioFinal=35;
 var marca;
+var impuesto;
+var ingresosBrutos;
 
 function CalcularPrecio () 
 {
@@ -24,12 +26,66 @@ function CalcularPrecio ()
         subprecio=precioFinal*Cantidad;
         descuento=subprecio*0.50;
         precioDescuento=subprecio-descuento;
-
-
-        document.getElementById('precioDescuento').value=precioDescuento;
+    
+    }else if(Cantidad==5 && marca=='ArgentinaLuz'){
+        subprecio=precioFinal*Cantidad;
+        descuento=subprecio*0.40;
+        precioDescuento=subprecio-descuento;
+    }else if(Cantidad==5){
+        subprecio=precioFinal*Cantidad;
+        descuento=subprecio*0.30;
+        precioDescuento=subprecio-descuento;
+    
+    }else if(Cantidad==4 && marca=='ArgentinaLuz' || marca=='FelipeLamparas'){
+        subprecio=precioFinal*Cantidad;
+        descuento=subprecio*0.25;
+        precioDescuento=subprecio-descuento;
+    }else if(Cantidad==4){
+        subprecio=precioFinal*Cantidad;
+        descuento=subprecio*0.20;
+        precioDescuento=subprecio-descuento;
+    
+    }else if(Cantidad==3 && marca=='ArgentinaLuz'){
+        subprecio=precioFinal*Cantidad;
+        descuento=subprecio*0.15;
+        precioDescuento=subprecio-descuento;
+    }else if(Cantidad==3 && marca=='FelipeLamparas'){
+        subprecio=precioFinal*Cantidad;
+        descuento=subprecio*0.10;
+        precioDescuento=subprecio-descuento;
+    }else if(Cantidad==3){
+        subprecio=precioFinal*Cantidad;
+        descuento=subprecio*0.5;
+        precioDescuento=subprecio-descuento;
     }
 
+    if(precioDescuento>120){
+        impuesto=precioDescuento*0.10;
+        ingresosBrutos=precioDescuento+impuesto;
+        alert('IIBB Usted pago '+ingresosBrutos+ 'siendo '+impuesto+' el impuesto que se pagó')
+    }
 
+    document.getElementById('precioDescuento').value=precioDescuento;
 
+    /*switch(marca){
+        case 'ArgertinaLuz':
+            if(Cantidad>=6){
+                subprecio=precioFinal*Cantidad;
+                descuento=subprecio*0.50;
+                precioDescuento=subprecio-descuento;
+             }else if(cantidad=5){
+                subprecio=precioFinal*Cantidad;
+                descuento=subprecio*0.40;
+                precioDescuento=subprecio-descuento;
+            }else if(cantidad=4){
+                subprecio=precioFinal*Cantidad;
+                descuento=subprecio*0.25;
+                precioDescuento=subprecio-descuento;
+            }else if(cantidad=3){
+                subprecio=precioFinal*Cantidad;
+                descuento=subprecio*0.15;
+                precioDescuento=subprecio-descuento;
+            }
  	
+    }*/
 }
